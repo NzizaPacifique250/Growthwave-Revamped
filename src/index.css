@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #1A1A2E;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-10;
+  }
+  .eyebrow {
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.18em] text-gw-teal;
+  }
+  .eyebrow-italic {
+    @apply text-gw-teal italic;
+  }
+  .h-section {
+    @apply font-display text-4xl md:text-5xl font-bold text-gw-ink leading-[1.1];
+  }
+  .h-section-light {
+    @apply font-display text-4xl md:text-5xl font-bold text-white leading-[1.1];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-sm transition-all duration-200 cursor-pointer;
+  }
+  .btn-primary {
+    @apply bg-gw-teal text-white hover:bg-gw-tealDark hover:-translate-y-0.5 shadow-md hover:shadow-lg;
+  }
+  .btn-navy {
+    @apply bg-gw-navy text-white hover:bg-[#143F95] hover:-translate-y-0.5 shadow-md hover:shadow-lg;
+  }
+  .btn-amber {
+    @apply bg-gw-amber text-white hover:bg-[#D87E08] hover:-translate-y-0.5 shadow-md hover:shadow-lg;
+  }
+  .btn-ghost-teal {
+    @apply border border-gw-teal text-gw-teal bg-transparent hover:bg-gw-teal hover:text-white;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-cardHover;
+  }
+  .card-teal-left {
+    @apply border-l-[3px] border-gw-teal;
+  }
+
+  .pill {
+    @apply inline-block rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wider;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
